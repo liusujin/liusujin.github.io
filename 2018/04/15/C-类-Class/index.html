@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/index_title_icon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/index_title_icon.jpg?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="c#,基础," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.定义&amp;emsp;&amp;emsp;类是最基础的c#类型，也是最强大的数据类型。   类(class)是对现实生活中一类具有共同特征的事物的抽象，它将这类事物的状态和操作组合在一个单元中，并且定义了他们的数据和行为。 类为动态创建的类实例(instance)提供了定义，实例也被称为对象(object)。 类支持继承 (inheritance) 和多态性 (polymorphism)，这是派生类 (de">
+<meta name="keywords" content="c#,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C# 类(Class)">
+<meta property="og:url" content="http://yoursite.com/2018/04/15/C-类-Class/index.html">
+<meta property="og:site_name" content="山主">
+<meta property="og:description" content="1.定义&amp;emsp;&amp;emsp;类是最基础的c#类型，也是最强大的数据类型。   类(class)是对现实生活中一类具有共同特征的事物的抽象，它将这类事物的状态和操作组合在一个单元中，并且定义了他们的数据和行为。 类为动态创建的类实例(instance)提供了定义，实例也被称为对象(object)。 类支持继承 (inheritance) 和多态性 (polymorphism)，这是派生类 (de">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-15T16:20:30.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C# 类(Class)">
+<meta name="twitter:description" content="1.定义&amp;emsp;&amp;emsp;类是最基础的c#类型，也是最强大的数据类型。   类(class)是对现实生活中一类具有共同特征的事物的抽象，它将这类事物的状态和操作组合在一个单元中，并且定义了他们的数据和行为。 类为动态创建的类实例(instance)提供了定义，实例也被称为对象(object)。 类支持继承 (inheritance) 和多态性 (polymorphism)，这是派生类 (de">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/15/C-类-Class/"/>
+
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码：') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <title>C# 类(Class) | 山主</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">山主</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">认识自己，控制自己</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/C-类-Class/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山主">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山主">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C# 类(Class)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-15T00:22:17+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5,240 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  19 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h1><p>&emsp;&emsp;<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/classes" target="_blank" rel="noopener">类</a>是最基础的c#类型，也是最强大的数据类型。</p>
+<blockquote>
+<ul>
+<li><code>类(class)</code>是对现实生活中一类具有共同特征的事物的抽象，它将这类事物的状态和操作组合在一个单元中，并且定义了他们的数据和行为。</li>
+<li>类为动态创建的类<code>实例(instance)</code>提供了定义，实例也被称为<code>对象(object)</code>。</li>
+<li>类支持<code>继承 (inheritance)</code> 和<code>多态性 (polymorphism)</code>，这是<code>派生类 (derived class)</code> 可用来扩展和专用化<code>基类 (base class)</code> 的机制。</li>
+</ul>
+</blockquote>
+<h1 id="2-成员"><a href="#2-成员" class="headerlink" title="2.成员"></a>2.成员</h1><p>&emsp;&emsp;<code>类(class)</code>和<code>结构(struct)</code>都具有表示其数据和行为的成员：</p>
+<blockquote>
+<ul>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/fields" target="_blank" rel="noopener">字段</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/properties" target="_blank" rel="noopener">属性</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/methods" target="_blank" rel="noopener">方法</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/events/index" target="_blank" rel="noopener">事件</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/statements-expressions-operators/operators" target="_blank" rel="noopener">运算符</a></li>
+<li><a href="https://msdn.microsoft.com/zh-cn/library/6x16t2tx%28v=vs.80%29.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="noopener">索引器</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/constructors" target="_blank" rel="noopener">构造函数</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/destructors" target="_blank" rel="noopener">析构函数</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/nested-types" target="_blank" rel="noopener">嵌套类型</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators" target="_blank" rel="noopener">可重载运算符</a></li>
+</ul>
+</blockquote>
+<h2 id="2-1-基础知识"><a href="#2-1-基础知识" class="headerlink" title="2.1 基础知识"></a>2.1 基础知识</h2><blockquote>
+<ul>
+<li>访问标识符<code>&lt;access specifier&gt;</code>指定了对类及其成员的访问规则,类默认是<code>internal</code>,成员默认是<code>private</code>。</li>
+<li>数据类型<code>&lt;data type&gt;</code>指定了变量的类型。</li>
+<li>返回类型<code>&lt;return type&gt;</code>指定了返回的方法返回的数据类型。</li>
+<li>点运算符<code>.</code>链接了对象的名称和成员的名称</li>
+</ul>
+</blockquote>
+<h2 id="2-2-字段"><a href="#2-2-字段" class="headerlink" title="2.2 字段"></a>2.2 字段</h2><p>&emsp;&emsp;<code>字段</code>是包含在类中的对象或值，起到封装数据的作用。</p>
+<blockquote>
+<ul>
+<li>通常以<code>&lt;access specifier&gt; &lt;data type&gt; variable;</code>的形式声明。</li>
+<li>访问对象中的字段是通过在对象名称后面依次添加一个句点和该字段的名称来实现的，具体形式为 <code>objectname.fieldname</code>。</li>
+<li>声明字段时可以使用赋值运算符为字段指定一个初始值。</li>
+<li><strong>注意：</strong><blockquote>
+<ul>
+<li><strong>字段在调用对象实例的构造函数之前初始化，所以，如果构造函数为字段分配了值，则它将改<br>写字段声明期间给定的任何值。</strong></li>
+<li><strong>字段初始值设定项不能引用其他实例字段。</strong></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="2-3-属性"><a href="#2-3-属性" class="headerlink" title="2.3 属性"></a>2.3 属性</h2><p>&emsp;&emsp;<code>属性</code>是称为<code>访问器</code>的特殊方法。它们提供灵活的机制来读取、编写或计算私有字段的值；使得数据在可被轻松访问的同时，仍能提供方法的安全性和灵活性。</p>
+<blockquote>
+<ul>
+<li>可以设置数据的读写模式</li>
+<li>可以对数据的访问及设置加以拦截/监视等</li>
+</ul>
+</blockquote>
+<h2 id="2-4-方法"><a href="#2-4-方法" class="headerlink" title="2.4 方法"></a>2.4 方法</h2><p>&emsp;&emsp;<code>方法 (method)</code> 是一种用于实现可以由对象或类执行的计算或操作的成员。<code>静态方法 (static method)</code>通过类来访问。<code>实例方法 (instance method)</code> 通过类的实例来访问。</p>
+<blockquote>
+<ul>
+<li>方法具有一个<code>参数 (parameter)列表</code>（可能为空），表示传递给该方法的值或变量引用；方法还具有一个<code>返回类型 (return type)</code>，指定该方法计算和返回的值的类型。如果方法不返回值，则其返回类型为 void。</li>
+<li><code>方法签名</code>具有唯一性。</li>
+<li><code>方法签名</code>由<code>方法名称</code>和<code>它的每一个形参（按从左到右的顺序）的类型和种类（值、引用或输出）</code>组成。<blockquote>
+<ul>
+<li><strong>方法签名既不包含返回类型，也不包含 params修饰符（它可用于最右边的参数）</strong>。</li>
+<li><strong>签名是对类、结构和接口的成员实施重载的机制：方法重载允许类、结构或接口用同一个名称声明多个方法，条件是它们的签名在该类、结构或接口中是唯一的。</strong></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="2-4-1-静态方法和实例方法"><a href="#2-4-1-静态方法和实例方法" class="headerlink" title="2.4.1 静态方法和实例方法"></a>2.4.1 静态方法和实例方法</h3><p>&emsp;&emsp;使用 static 修饰符声明的方法为静态方法 (static method)。静态方法不对特定实例进行操作，并且只能访问静态成员。<br>静态方法调用是通过<code>类名.方法名（参数）</code>进行。不使用 static 修饰符声明的方法为实例方法 (instance method)。实例方法对特定实例进行操作，并且能够访问静态成员和实例成员。在调用实例方法的实例上，可以通过 this 显式地访问该实例。</p>
+<h3 id="2-4-2-虚方法、重写方法和抽象方法"><a href="#2-4-2-虚方法、重写方法和抽象方法" class="headerlink" title="2.4.2 虚方法、重写方法和抽象方法"></a>2.4.2 虚方法、重写方法和抽象方法</h3><p>&emsp;&emsp;若一个实例方法的声明中含有 <code>virtual</code> 修饰符，则称该方法为<code>虚方法 (virtual method)</code>。若其中没有 virtual 修饰符，则称该方法为非虚方法 (non-virtual method)。</p>
+<p>&emsp;&emsp;<strong>在调用一个虚方法时，该调用所涉及的那个实例的运行时类型 (runtime type) 确定了要被调用的究竟是该方法的哪一个实现。在非虚方法调用中，实例的编译时类型 (compile-time type) 是决定性因素。</strong></p>
+<p>&emsp;&emsp;虚方法可以在派生类中<code>重写 (override)</code>。当某个实例方法声明包括 override 修饰符时，该方法将重写所继承的具有相同签名的虚方法。虚方法声明用于引入新方法，而重写方法声明则用于使现有的继承虚方法专用化（通过提供该方法的新实现）。</p>
+<p>&emsp;&emsp;<code>抽象 (abstract) 方法</code>是没有实现的虚方法。抽象方法使用 abstract 修饰符进行声明，并且只有在同样被声明为 abstract的类中才允许出现。抽象方法必须在每个非抽象派生类中重写。</p>
+<h2 id="2-5-事件"><a href="#2-5-事件" class="headerlink" title="2.5 事件"></a>2.5 事件</h2><p>&emsp;&emsp;事件的属性：</p>
+<blockquote>
+<ul>
+<li>发行者确定何时引发事件；订户确定对事件作出何种响应。</li>
+<li>一个事件可以有多个订户。 订户可以处理来自多个发行者的多个事件。</li>
+<li>没有订户的事件永远也不会引发。</li>
+<li>事件通常用于表示用户操作。</li>
+<li>当事件具有多个订户时，引发该事件时会同步调用事件处理程序。 若要异步调用事件，请参阅 <a href="https://docs.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously" target="_blank" rel="noopener">Calling Synchronous Methods Asynchronously</a>。</li>
+<li>在 .NET Framework 类库中，事件基于 EventHandler 委托和 EventArgs 基类。<blockquote>
+<ul>
+<li>泛型事件<a href="https://msdn.microsoft.com/zh-cn/library/db0etb8x(v=vs.110" target="_blank" rel="noopener"><code>EventHandler&lt;TEventArgs&gt;</code></a>.aspx)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>&emsp;&emsp;类或对象可以通过事件向其他类或对象通知发生的相关事情。 发送（或 引发）事件的类称为“发行者” ，接收（或 处理）事件的类称为“订户” 。</p>
+<h2 id="2-6-运算符"><a href="#2-6-运算符" class="headerlink" title="2.6 运算符"></a>2.6 运算符</h2><p>&emsp;&emsp;在 C# 中，<code>运算符</code>是应用于<code>表达式或语句</code>中的<code>一个或多个操作数</code>的程序元素。</p>
+<blockquote>
+<ul>
+<li>接受一个操作数的运算符称为<code>一元运算符</code>，例如递增运算符 (++) 或(new)。</li>
+<li>接受两个操作数的运算符称为<code>二元运算符</code>，例如算术运算符（*、/、 、 ）。</li>
+<li>条件运算符<code>?:</code>接受三个操作数，是 C# 中唯一的三元运算符。</li>
+</ul>
+</blockquote>
+<p>&emsp;&emsp;当表达式中出现两个或两个以上具有相同优先级的运算符时，将根据结合性计算它们。 左结合运算符按从左到右的顺序计算。 例如，x <em> y / z 将计算为 (x </em> y) / z。 右结合运算符按从右到左的顺序计算。</p>
+<p>&emsp;&emsp;可通过使用圆括号更改运算符优先级和相关性。 例如，2 + 3 <em> 2 通常计算结果为 8，因为乘法运算符的优先级高于加法运算符。 但是，如果你将表达式编写为 (2 + 3) </em> 2，则先计算加法，再计算乘法，且结果为 10。 </p>
+<p><strong>主要运算符:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x.y</td>
+<td style="text-align:left">成员访问</td>
+</tr>
+<tr>
+<td style="text-align:left">x?.y</td>
+<td style="text-align:left">条件成员访问</td>
+</tr>
+<tr>
+<td style="text-align:left">f(x)</td>
+<td style="text-align:left">方法和委托调用</td>
+</tr>
+<tr>
+<td style="text-align:left">a[x]</td>
+<td style="text-align:left">数组和索引器访问</td>
+</tr>
+<tr>
+<td style="text-align:left">a?[x]</td>
+<td style="text-align:left">条件数组和索引器访问</td>
+</tr>
+<tr>
+<td style="text-align:left">x++</td>
+<td style="text-align:left">后递增</td>
+</tr>
+<tr>
+<td style="text-align:left">x–</td>
+<td style="text-align:left">后递减</td>
+</tr>
+<tr>
+<td style="text-align:left">new T(…)</td>
+<td style="text-align:left">对象和委托创建</td>
+</tr>
+<tr>
+<td style="text-align:left">new T(…){…}</td>
+<td style="text-align:left">具有初始值设定项的对象创建。请参阅<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers" target="_blank" rel="noopener">对象和集合初始值设定项</a>。</td>
+</tr>
+<tr>
+<td style="text-align:left">new {…}</td>
+<td style="text-align:left">匿名对象初始值设定项。请参阅<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types" target="_blank" rel="noopener">匿名类型</a>。</td>
+</tr>
+<tr>
+<td style="text-align:left">new T[…]</td>
+<td style="text-align:left">数组创建。请参阅<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/arrays/index" target="_blank" rel="noopener">数组</a>。</td>
+</tr>
+<tr>
+<td style="text-align:left">typeof(T)</td>
+<td style="text-align:left">获取 T 的 System.Type 对象</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/checked" target="_blank" rel="noopener">checked(x)</a></td>
+<td style="text-align:left">在已检查的上下文中计算表达式</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/unchecked" target="_blank" rel="noopener">unchecked(x)</a></td>
+<td style="text-align:left">在未检查的上下文中计算表达式</td>
+</tr>
+<tr>
+<td style="text-align:left">default (T)</td>
+<td style="text-align:left">获取类型 T 的默认值</td>
+</tr>
+<tr>
+<td style="text-align:left">delegate {}</td>
+<td style="text-align:left">匿名函数（匿名方法）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一元运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+x</td>
+<td style="text-align:left">标识</td>
+</tr>
+<tr>
+<td style="text-align:left">-x</td>
+<td style="text-align:left">求反</td>
+</tr>
+<tr>
+<td style="text-align:left">!x</td>
+<td style="text-align:left">逻辑求反</td>
+</tr>
+<tr>
+<td style="text-align:left">~x</td>
+<td style="text-align:left">按位求反</td>
+</tr>
+<tr>
+<td style="text-align:left">++x</td>
+<td style="text-align:left">前递增</td>
+</tr>
+<tr>
+<td style="text-align:left">–x</td>
+<td style="text-align:left">前递减</td>
+</tr>
+<tr>
+<td style="text-align:left">(T)x</td>
+<td style="text-align:left">将 x 显式转换为类型 T</td>
+</tr>
+</tbody>
+</table>
+<p><strong>乘法运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">乘法</td>
+</tr>
+<tr>
+<td style="text-align:left">/</td>
+<td style="text-align:left">除法</td>
+</tr>
+<tr>
+<td style="text-align:left">%</td>
+<td style="text-align:left">求余</td>
+</tr>
+</tbody>
+</table>
+<p><strong>相加运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x + y</td>
+<td style="text-align:left">相加、字符串串联、委托组合</td>
+</tr>
+<tr>
+<td style="text-align:left">x - y</td>
+<td style="text-align:left">相减、委托移除</td>
+</tr>
+</tbody>
+</table>
+<p><strong>移位运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x &lt;&lt; y</td>
+<td style="text-align:left">左移</td>
+</tr>
+<tr>
+<td style="text-align:left">x &gt;&gt; y</td>
+<td style="text-align:left">右移</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关系和类型运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x &lt; y</td>
+<td style="text-align:left">小于</td>
+</tr>
+<tr>
+<td style="text-align:left">x &gt; y</td>
+<td style="text-align:left">大于</td>
+</tr>
+<tr>
+<td style="text-align:left">x &lt;= y</td>
+<td style="text-align:left">小于或等于</td>
+</tr>
+<tr>
+<td style="text-align:left">x &gt;= y</td>
+<td style="text-align:left">大于或等于</td>
+</tr>
+<tr>
+<td style="text-align:left">x is T</td>
+<td style="text-align:left">如果 x 为 T，则返回 True；否则返回 False。</td>
+</tr>
+<tr>
+<td style="text-align:left">x as T</td>
+<td style="text-align:left">返回类型为 T 的 x，如果 x 不是 T，则返回 null</td>
+</tr>
+</tbody>
+</table>
+<p><strong>相等运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x == y</td>
+<td style="text-align:left">等于</td>
+</tr>
+<tr>
+<td style="text-align:left">x != y</td>
+<td style="text-align:left">不等于</td>
+</tr>
+</tbody>
+</table>
+<p><strong>逻辑、条件和 Null 运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">逻辑“与”</td>
+<td style="text-align:left">x &amp; y</td>
+<td style="text-align:left">整型按位“与”，布尔型逻辑“与”</td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑XOR</td>
+<td style="text-align:left">x ^ y</td>
+<td style="text-align:left">整型按位 XOR，布尔型逻辑 XOR</td>
+</tr>
+<tr>
+<td style="text-align:left">逻辑“或”</td>
+<td style="text-align:left">x &#124; y</td>
+<td style="text-align:left">整型按位“或”，布尔型逻辑“或”</td>
+</tr>
+<tr>
+<td style="text-align:left">条件“与”</td>
+<td style="text-align:left">x &amp;&amp; y</td>
+<td style="text-align:left">仅当 x 为 True 时计算 y</td>
+</tr>
+<tr>
+<td style="text-align:left">条件“或”</td>
+<td style="text-align:left">x &#124;&#124; y</td>
+<td style="text-align:left">仅当 x 为 False 时计算 y</td>
+</tr>
+<tr>
+<td style="text-align:left">null 合并</td>
+<td style="text-align:left">x ?? y</td>
+<td style="text-align:left">如果 x 为 Null，则计算结果为 y，否则计算结果为 x</td>
+</tr>
+<tr>
+<td style="text-align:left">条件运算</td>
+<td style="text-align:left">x ? y : z</td>
+<td style="text-align:left">如果 x 为 True，则计算结果为 y；如果 x 为 False 则计算结果为 z</td>
+</tr>
+</tbody>
+</table>
+<p><strong>赋值和匿名运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">=</td>
+<td style="text-align:left">赋值</td>
+</tr>
+<tr>
+<td style="text-align:left">x op= y</td>
+<td style="text-align:left">复合赋值。 支持以下这些运算符：+=、-=、*=、/=、%=、&amp;=、&#124;=、!=、&lt;&lt;=、&gt;&gt;=</td>
+</tr>
+<tr>
+<td style="text-align:left">(T x) =&gt; y</td>
+<td style="text-align:left">匿名函数（lambda 表达式）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-7-索引器"><a href="#2-7-索引器" class="headerlink" title="2.7 索引器"></a>2.7 索引器</h2><p>&emsp;&emsp;索引器允许类或结构的实例就像数组一样进行索引。 <code>无需显式指定类型或实例成员</code>，即可设置或检索索引值。<br><strong>索引器类似于属性，不同之处在于它们的访问器需要使用参数。</strong></p>
+<p>概述：</p>
+<blockquote>
+<ul>
+<li>使用索引器可以用类似于数组的方式为对象建立索引。</li>
+<li><code>get</code>取值函数返回值。<code>set</code>取值函数分配值。</li>
+<li><code>this</code> 关键字用于定义索引器。</li>
+<li><code>value</code> 关键字用于定义 set 索引器所赋的值。</li>
+<li>索引器不必根据整数值进行索引；由你决定如何定义特定的查找机制。</li>
+<li>索引器可被重载。</li>
+<li>索引器可以有多个形参，例如当访问二维数组时。</li>
+</ul>
+</blockquote>
+<p><strong>属性和索引器之间的比较</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">索引器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">允许以将方法视作公共数据成员的方式调用方法。</td>
+<td style="text-align:left">通过在对象自身上使用数组表示法，允许访问对象内部集合的元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">通过简单名称访问。</td>
+<td style="text-align:left">通过索引访问。</td>
+</tr>
+<tr>
+<td style="text-align:left">可为静态成员或实例成员。</td>
+<td style="text-align:left">必须是实例成员。</td>
+</tr>
+<tr>
+<td style="text-align:left">属性的 get 访问器没有任何参数。</td>
+<td style="text-align:left">索引器的 get 访问器具有与索引器相同的形参列表。</td>
+</tr>
+<tr>
+<td style="text-align:left">属性的 set 访问器包含隐式 value 参数。</td>
+<td style="text-align:left">索引器的 set 访问器具有与索引器相同的形参列表，value 参数也是如此。</td>
+</tr>
+<tr>
+<td style="text-align:left">通过自动实现的属性支持简短语法。</td>
+<td style="text-align:left">不支持简短语法。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-7-构造函数"><a href="#2-7-构造函数" class="headerlink" title="2.7 构造函数"></a>2.7 构造函数</h2><p>&emsp;&emsp;默认情况下 C#将创建一个构造函数，该构造函数实例化对象，并将所有成员变量设置为此处列出的默认值：<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/default-values-table" target="_blank" rel="noopener">默认值表</a>。静态类和结构也可以有构造函数。</p>
+<p>&emsp;&emsp;C# 支持两种构造函数：实例构造函数和静态构造函数。</p>
+<blockquote>
+<ul>
+<li><code>实例构造函数 (instance constructor)</code> 是实现初始化类实例所需操作的成员。</li>
+<li><code>静态构造函数 (static constructor)</code>是一种用于在第一次加载类本身时实现其初始化所需操作的成员。</li>
+</ul>
+</blockquote>
+<p>&emsp;&emsp;构造函数的声明和方法类似，不过它没有返回类型，并且它的名称与其所属的类的名称相同。如果构造函数声明包含 static 修饰符，则它声明了一个静态构造函数。否则，它声明的是一个实例构造函数。</p>
+<h2 id="2-8-析构函数"><a href="#2-8-析构函数" class="headerlink" title="2.8 析构函数"></a>2.8 析构函数</h2><p>&emsp;&emsp;<strong>析构函数 (destructor)</strong> 是一种用于实现销毁类实例所需操作的成员。析构函数不能带参数，不能具有可访问性修饰符，也不能被显式调用。垃圾回收期间会自动调用所涉及实例的析构函数。</p>
+<p>&emsp;&emsp;垃圾回收器在决定何时回收对象和运行析构函数方面允许有广泛的自由度。具体而言，析构函数调用的时机并不是确定的，析构函数可能在任何线程上执行。由于这些以及其他原因，<strong>仅当没有其他可行的解决方案时，才应在类中实现析构函数。</strong></p>
+<p>&emsp;&emsp;析构函数的名称是在类的名称前加上一个波浪形（~）作为前缀，它不返回值，也不带任何参数。<br>析构函数用于在结束程序（比如关闭文件、释放内存等）之前释放资源。<strong>析构函数不能继承或重载</strong>。</p>
+<p><strong>特点：</strong></p>
+<blockquote>
+<ul>
+<li>无法在结构中定义终结器。 它们仅用于类。</li>
+<li>一个类只能有一个终结器。</li>
+<li>不能继承或重载终结器。</li>
+<li>不能手动调用终结器。 可以自动调用它们。</li>
+<li>终结器不使用修饰符或参数。</li>
+<li>终结器隐式调用对象基类上的 Finalize。 因此，对终结器的调用会隐式转换为以下代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">protected override void Finalize()  </span><br><span class="line">&#123;  </span><br><span class="line">    try  </span><br><span class="line">    &#123;  </span><br><span class="line">        // Cleanup statements...  </span><br><span class="line">    &#125;  </span><br><span class="line">    finally  </span><br><span class="line">    &#123;  </span><br><span class="line">        base.Finalize();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>这意味着，对继承链（从派生程度最高到派生程度最低）中的所有实例以递归方式调用 Finalize 方法。</li>
+</ul>
+</blockquote>
+<h2 id="2-9-嵌套类型"><a href="#2-9-嵌套类型" class="headerlink" title="2.9 嵌套类型"></a>2.9 嵌套类型</h2><p>&emsp;&emsp;在类或构造中定义的类型称为嵌套类型。</p>
+<p><strong>成员可访问性级别：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">声明的可访问性</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">public</td>
+<td style="text-align:left">访问不受限制。</td>
+</tr>
+<tr>
+<td style="text-align:left">protected</td>
+<td style="text-align:left">访问限于包含类或派生自包含类的类型。</td>
+</tr>
+<tr>
+<td style="text-align:left">internal</td>
+<td style="text-align:left">访问限于当前程序集。</td>
+</tr>
+<tr>
+<td style="text-align:left">protected internal</td>
+<td style="text-align:left">访问限于当前程序集或派生自包含类的类型。</td>
+</tr>
+<tr>
+<td style="text-align:left">private</td>
+<td style="text-align:left">访问限于包含类。</td>
+</tr>
+<tr>
+<td style="text-align:left">private protected</td>
+<td style="text-align:left">访问限于包含类或当前程序集中派生自包含类的类型。 <strong>自 C# 7.2 之后可用。</strong></td>
+</tr>
+</tbody>
+</table>
+<p>&emsp;&emsp;不论外部类型是类还是构造，嵌套类型均默认为 <code>private</code>；仅可从其包含类型中进行访问。可指定访问修饰符来定义嵌套类型的可访问性。</p>
+<blockquote>
+<ul>
+<li>定义<code>protected</code>，<code>protected internal</code>或<code>private protected</code>嵌套类内的密封类将生成编译器警告CS0628，”新的保护的成员声明为密封类中。”</li>
+</ul>
+</blockquote>
+<p>&emsp;&emsp;<strong>嵌套类型可以访问其包含类型可以访问的所有成员。 它可以<code>访问</code>包含类型的<code>私有成员和受保护成员</code>（包括所有继承的受保护成员）。</strong></p>
+<h2 id="2-10-可重载运算符"><a href="#2-10-可重载运算符" class="headerlink" title="2.10 可重载运算符"></a>2.10 可重载运算符</h2><blockquote>
+<ul>
+<li>使用 <code>operator</code> 关键字重载内置运算符，或在类或结构声明中提供用户定义的转换。</li>
+</ul>
+</blockquote>
+<p>&emsp;&emsp;C# 通过使用 <code>operator</code> 关键字定义静态成员函数，来允许用户定义的类型重载运算符。 不过并非所有运算符都可以进行重载，并且其他运算符具有限制，如下表所列：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">可重载性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+、-、!、~、++、–、true、false</td>
+<td style="text-align:left">这些一元运算符可以进行重载。</td>
+</tr>
+<tr>
+<td style="text-align:left">+, -, *, /, %, &amp;,</td>
+<td style="text-align:left">, ^, &lt;&lt;, &gt;&gt;</td>
+<td>这些二元运算符可以进行重载。</td>
+</tr>
+<tr>
+<td style="text-align:left">==, !=, &lt;, &gt;, &lt;=, &gt;=</td>
+<td style="text-align:left">比较运算符可以进行重载，<strong>必须成对进行重载。</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">&amp;&amp;, &#124;&#124;</td>
+<td style="text-align:left">条件逻辑运算符无法进行重载，但是它们使用 &amp; 和 &#124;（可以进行重载）来计算。</td>
+</tr>
+<tr>
+<td style="text-align:left">[]</td>
+<td style="text-align:left">数组索引运算符无法进行重载，但是可以定义索引器。</td>
+</tr>
+<tr>
+<td style="text-align:left">(T)x</td>
+<td style="text-align:left">强制转换运算符无法进行重载，但是可以定义新转换运算符（请参阅 explicit 和 implicit）。</td>
+</tr>
+<tr>
+<td style="text-align:left">+=, -=, *=, /=, %=, &amp;=, &#124;=, ^=, &lt;&lt;=, &gt;&gt;=</td>
+<td style="text-align:left">赋值运算符无法进行重载，但是 +=（举例）使用 +（可以进行重载）来计算。</td>
+</tr>
+<tr>
+<td style="text-align:left">=、.、?:、??、-&gt;、=&gt;、f(x)、as、checked、unchecked、default、delegate、is、new、sizeof、typeof</td>
+<td style="text-align:left">这些运算符无法进行重载。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-转换运算符explicit和implicit"><a href="#3-转换运算符explicit和implicit" class="headerlink" title="3.转换运算符explicit和implicit"></a>3.转换运算符explicit和implicit</h1><p>&emsp;&emsp;您可以使用 <code>implicit</code> 转换运算符或者 <code>explicit</code> 转换运算符，前者更易于使用，后者能向阅读代码的每个人清楚地指示您要转换类型。 本主题演示转换运算符的两个类型。</p>
+<h2 id="3-1-explicit"><a href="#3-1-explicit" class="headerlink" title="3.1 explicit"></a>3.1 explicit</h2><p>&emsp;&emsp;<code>explicit</code>转换运算符从源类型转换为目标类型。 <strong>源类型提供转换运算符。</strong> 不同于隐式转换，显式转换运算符必须通过转换的方式来调用。 如果转换操作会导致异常或丢失信息，则应将其标记为 explicit。 这可阻止编译器静默调用可能产生意外后果的转换操作。</p>
+<p><strong>代码示例：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">class Celsius</span><br><span class="line">&#123;</span><br><span class="line">    public Celsius(float temp)</span><br><span class="line">    &#123;</span><br><span class="line">        degrees = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    public static explicit operator Fahrenheit(Celsius c)</span><br><span class="line">    &#123;</span><br><span class="line">        return new Fahrenheit((9.0f / 5.0f) * c.degrees + 32);</span><br><span class="line">    &#125;</span><br><span class="line">    public float Degrees</span><br><span class="line">    &#123;</span><br><span class="line">        get &#123; return degrees; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    private float degrees;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Fahrenheit</span><br><span class="line">&#123;</span><br><span class="line">    public Fahrenheit(float temp)</span><br><span class="line">    &#123;</span><br><span class="line">        degrees = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    // Must be defined inside a class called Fahrenheit:</span><br><span class="line">    public static explicit operator Celsius(Fahrenheit fahr)</span><br><span class="line">    &#123;</span><br><span class="line">        return new Celsius((5.0f / 9.0f) * (fahr.degrees - 32));</span><br><span class="line">    &#125;</span><br><span class="line">    public float Degrees</span><br><span class="line">    &#123;</span><br><span class="line">        get &#123; return degrees; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    private float degrees;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MainClass</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        Fahrenheit fahr = new Fahrenheit(100.0f);</span><br><span class="line">        Console.Write(&quot;&#123;0&#125; Fahrenheit&quot;, fahr.Degrees);</span><br><span class="line">        Celsius c = (Celsius)fahr;</span><br><span class="line"></span><br><span class="line">        Console.Write(&quot; = &#123;0&#125; Celsius&quot;, c.Degrees);</span><br><span class="line">        Fahrenheit fahr2 = (Fahrenheit)c;</span><br><span class="line">        Console.WriteLine(&quot; = &#123;0&#125; Fahrenheit&quot;, fahr2.Degrees);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// Output:</span><br><span class="line">// 100 Fahrenheit = 37.77778 Celsius = 100 Fahrenheit</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-1-implicit"><a href="#3-1-implicit" class="headerlink" title="3.1 implicit"></a>3.1 implicit</h2><p>&emsp;&emsp;<code>implicit</code>关键字用于声明隐式的用户定义类型转换运算符。 如果可以确保转换过程不会造成数据丢失，则可使用该关键字在用户定义类型和其他类型之间进行隐式转换。</p>
+<blockquote>
+<p>  &emsp;&emsp;隐式转换可以通过消除不必要的强制转换来提高源代码的可读性。 但是，因为隐式转换不需要程序员将一种类型显式强制转换为另一种类型，所以使用隐式转换时必须格外小心，以免出现意外结果。 一般情况下，隐式转换运算符应当从不引发异常并且从不丢失信息，以便可以在程序员不知晓的情况下安全使用它们。 如果转换运算符不能满足那些条件，则应将其标记为 explicit。 </p>
+</blockquote>
+<p><strong>代码示例：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Digit</span><br><span class="line">&#123;</span><br><span class="line">    public Digit(double d) &#123; val = d; &#125;</span><br><span class="line">    public double val;</span><br><span class="line">    // ...other members</span><br><span class="line"></span><br><span class="line">    // User-defined conversion from Digit to double</span><br><span class="line">    public static implicit operator double(Digit d)</span><br><span class="line">    &#123;</span><br><span class="line">        return d.val;</span><br><span class="line">    &#125;</span><br><span class="line">    //  User-defined conversion from double to Digit</span><br><span class="line">    public static implicit operator Digit(double d)</span><br><span class="line">    &#123;</span><br><span class="line">        return new Digit(d);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Digit dig = new Digit(7);</span><br><span class="line">        //This call invokes the implicit &quot;double&quot; operator</span><br><span class="line">        double num = dig;</span><br><span class="line">        //This call invokes the implicit &quot;Digit&quot; operator</span><br><span class="line">        Digit dig2 = 12;</span><br><span class="line">        Console.WriteLine(&quot;num = &#123;0&#125; dig2 = &#123;1&#125;&quot;, num, dig2.val);</span><br><span class="line">        Console.ReadLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="4-静态类和静态类成员"><a href="#4-静态类和静态类成员" class="headerlink" title="4.静态类和静态类成员"></a>4.静态类和静态类成员</h1><h2 id="4-1-静态类"><a href="#4-1-静态类" class="headerlink" title="4.1 静态类"></a>4.1 静态类</h2><p>&emsp;&emsp;<strong>静态类</strong>基本上与非静态类相同，但存在一个差异：静态类无法实例化。 换句话说，无法使用 new 关键字创建类类型的变量。 由于不存在任何实例变量，因此可以使用类名本身访问静态类的成员。</p>
+<blockquote>
+<ul>
+<li>静态类可以用作只对输入参数进行操作并且不必获取或设置任何内部实例字段的方法集的方便容器。</li>
+<li>与所有类类型的情况一样，静态类的类型信息在引用该类的程序加载时，由 .NET Framework 公共语言运行时 (CLR) 加载。 程序无法确切指定类加载的时间。 但是，可保证进行加载，以及在程序中首次引用类之前初始化其字段并调用其静态构造函数。 静态构造函数只调用一次，在程序所驻留的应用程序域的生存期内，静态类会保留在内存中。</li>
+<li>静态类的优点是编译器可以进行检查，以确保不会意外地添加任何实例成员。 编译器可保证无法创建此类的实例。</li>
+</ul>
+</blockquote>
+<h2 id="4-2-静态类成员"><a href="#4-2-静态类成员" class="headerlink" title="4.2 静态类成员"></a>4.2 静态类成员</h2><blockquote>
+<ul>
+<li>非静态类可以包含静态方法、字段、属性或事件。</li>
+<li>静态成员始终按类名（而不是实例名称）进行访问。</li>
+<li>静态方法和属性无法在其包含类型中访问非静态字段和事件，它们无法访问任何对象的实例变量，除非在方法参数中显式传递它。</li>
+</ul>
+</blockquote>
+<p><strong>静态字段的两个常见用途是保留已实例化的对象数的计数，或是存储必须在所有实例间共享的值。</strong></p>
+<p>&emsp;&emsp;对静态方法的调用会采用 Microsoft 中间语言 (MSIL) 生成调用指令，而对实例方法的调用会生成 callvirt 指令，该指令还会检查是否存在 null 对象引用。 但是在大多数时候，两者之间的性能差异并不显著。</p>
+<h1 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h1><p>&emsp;&emsp;作为我们打交道最多的<strong>类(Class)</strong>,详细的了解它的方方面面可以让我们在使用的时候不仅知其然，更是知其所以然。而且在整理这些资料的过程中发现微软</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    山主
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2018/04/15/C-类-Class/" title="C# 类(Class)">http://yoursite.com/2018/04/15/C-类-Class/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c-sharp/" rel="tag"><i class="fa fa-tag"></i> c#</a>
+          
+            <a href="/tags/basic/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
+          
+        </div>
+      
+
+      <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束-------------</div>
+    
+</div>
+      
+      </div>
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/14/使用GitHub和Hexo搭建个人博客过程记录/" rel="next" title="使用GitHub和Hexo搭建个人博客过程记录">
+                <i class="fa fa-chevron-left"></i> 使用GitHub和Hexo搭建个人博客过程记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">山主</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-定义"><span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-成员"><span class="nav-text">2.成员</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-基础知识"><span class="nav-text">2.1 基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-字段"><span class="nav-text">2.2 字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-属性"><span class="nav-text">2.3 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-方法"><span class="nav-text">2.4 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-静态方法和实例方法"><span class="nav-text">2.4.1 静态方法和实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-虚方法、重写方法和抽象方法"><span class="nav-text">2.4.2 虚方法、重写方法和抽象方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-事件"><span class="nav-text">2.5 事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-运算符"><span class="nav-text">2.6 运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-索引器"><span class="nav-text">2.7 索引器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-构造函数"><span class="nav-text">2.7 构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-析构函数"><span class="nav-text">2.8 析构函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-嵌套类型"><span class="nav-text">2.9 嵌套类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-10-可重载运算符"><span class="nav-text">2.10 可重载运算符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-转换运算符explicit和implicit"><span class="nav-text">3.转换运算符explicit和implicit</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-explicit"><span class="nav-text">3.1 explicit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-implicit"><span class="nav-text">3.1 implicit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-静态类和静态类成员"><span class="nav-text">4.静态类和静态类成员</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-静态类"><span class="nav-text">4.1 静态类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-静态类成员"><span class="nav-text">4.2 静态类成员</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-总结"><span class="nav-text">5.总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山主</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">总字数&#58;</span>
+    
+    <span title="总字数">6.8k 字</span>
+  
+</div>
+
+
+  <div class="powered-by">  个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">
+  <a class="theme-link" target="_blank" href="https://github.com/liusujin">My GitHub
+    </a>
+    </div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
