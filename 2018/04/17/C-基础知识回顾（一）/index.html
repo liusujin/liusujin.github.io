@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="c#,基础," />
 
 
 
@@ -82,14 +82,18 @@
 
 
 
+<meta name="description" content="1.循环&amp;emsp;&amp;emsp;循环由迭代语句创建。 根据循环终止条件，迭代语句可导致多次执行嵌入式语句。 除非遇到跳转语句，否则这些语句按顺序执行。 1.1 do  do…while 循环是在循环的尾部检查它的条件。 do…while 循环与 while 循环类似，但是 do…while 循环会确保至少执行一次循环。   12345do&amp;#123;   statement(s);&amp;#125;wh">
+<meta name="keywords" content="c#,基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# 基础知识回顾（一）">
 <meta property="og:url" content="http://yoursite.com/2018/04/17/C-基础知识回顾（一）/index.html">
 <meta property="og:site_name" content="山主">
+<meta property="og:description" content="1.循环&amp;emsp;&amp;emsp;循环由迭代语句创建。 根据循环终止条件，迭代语句可导致多次执行嵌入式语句。 除非遇到跳转语句，否则这些语句按顺序执行。 1.1 do  do…while 循环是在循环的尾部检查它的条件。 do…while 循环与 while 循环类似，但是 do…while 循环会确保至少执行一次循环。   12345do&amp;#123;   statement(s);&amp;#125;wh">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-16T16:27:56.443Z">
+<meta property="og:updated_time" content="2018-04-27T16:31:46.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 基础知识回顾（一）">
+<meta name="twitter:description" content="1.循环&amp;emsp;&amp;emsp;循环由迭代语句创建。 根据循环终止条件，迭代语句可导致多次执行嵌入式语句。 除非遇到跳转语句，否则这些语句按顺序执行。 1.1 do  do…while 循环是在循环的尾部检查它的条件。 do…while 循环与 while 循环类似，但是 do…while 循环会确保至少执行一次循环。   12345do&amp;#123;   statement(s);&amp;#125;wh">
 
 
 
@@ -312,6 +316,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -333,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  1,589 字
                 </span>
               
 
@@ -349,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -370,7 +396,177 @@
       
 
       
-        
+        <h1 id="1-循环"><a href="#1-循环" class="headerlink" title="1.循环"></a>1.循环</h1><p>&emsp;&emsp;<strong>循环由迭代语句创建。</strong> 根据循环终止条件，迭代语句可导致多次执行嵌入式语句。 除非遇到跳转语句，否则这些语句按顺序执行。</p>
+<h2 id="1-1-do"><a href="#1-1-do" class="headerlink" title="1.1 do"></a>1.1 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/do" target="_blank" rel="noopener">do</a></h2><blockquote>
+<ul>
+<li>do…while 循环是在循环的尾部检查它的条件。</li>
+<li>do…while 循环与 while 循环类似，但是 do…while 循环会确保至少执行一次循环。</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">   statement(s);</span><br><span class="line"></span><br><span class="line">&#125;while( condition );</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">op=&gt;operation: statement(s)</span><br><span class="line">cond=&gt;condition: condition</span><br><span class="line">e=&gt;end</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;op</span><br><span class="line">cond(no)-&gt;e</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-while"><a href="#1-2-while" class="headerlink" title="1.2 while"></a>1.2 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/while" target="_blank" rel="noopener">while</a></h2><p>&emsp;&emsp;因为 while 表达式的测试在每次执行循环之前开始，所以 while 循环执行零次或多次。 这不同于 do 循环，该循环执行一次或多次。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while(condition)</span><br><span class="line">&#123;</span><br><span class="line">   statement(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-foreach，in"><a href="#1-3-foreach，in" class="headerlink" title="1.3 foreach，in"></a>1.3 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/foreach-in" target="_blank" rel="noopener">foreach，in</a></h2><p>&emsp;&emsp;foreach 语句针对实现 System.Collections.IEnumerable 或 System.Collections.Generic.IEnumerable<t> 接口的数组或集合中的每个元素重复一组嵌入语句。 foreach 语句用于循环访问集合以获取所需信息，但不用于添加或删除源集合中的项，以避免不可预知的副作用。 如果需要添加或删除源集合中的项，请使用 for 循环。</t></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foreach ( var item in collection )</span><br><span class="line">&#123;</span><br><span class="line">   statement(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-4-for"><a href="#1-4-for" class="headerlink" title="1.4 for"></a>1.4 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/for" target="_blank" rel="noopener">for</a></h2><p>&emsp;&emsp;通过使用 for 循环，可以重复运行一个语句或语句块，直到指定的表达式的计算结果为 false 为止。 这种类型的循环可用于循环访问数组，以及事先知道循环要在其中进行循环访问的次数的其他应用程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for ( init; condition; increment )</span><br><span class="line">&#123;</span><br><span class="line">   statement(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2-分支"><a href="#2-分支" class="headerlink" title="2.分支"></a>2.分支</h1><h2 id="2-1-if-else"><a href="#2-1-if-else" class="headerlink" title="2.1 if-else"></a>2.1 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/if-else" target="_blank" rel="noopener">if-else</a></h2><p>&emsp;&emsp;一个 if 语句 后可跟一个可选的 else 语句，else 语句在布尔表达式为假时执行。</p>
+<blockquote>
+<ul>
+<li>在 C# 中，嵌套 if-else 语句是合法的，这意味着您可以在一个 if 或 else if 语句内使用另一个 if 或 else if 语句。</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(boolean_expression)</span><br><span class="line">&#123;</span><br><span class="line">   /* 如果布尔表达式为真将执行的语句 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if(boolean_expression)</span><br><span class="line">&#123;</span><br><span class="line">   /* 如果布尔表达式为真将执行的语句 */</span><br><span class="line">   if(boolean_expression_sub)</span><br><span class="line">    &#123;</span><br><span class="line">        /* 如果布尔表达式为真将执行的语句 */</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if(boolean_expression)</span><br><span class="line">&#123;</span><br><span class="line">     /* 如果布尔表达式为真将执行的语句 */</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    /* 如果布尔表达式为假将执行的语句 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if(boolean_expression_first)</span><br><span class="line">&#123;</span><br><span class="line">    /* 如果布尔表达式为真将执行的语句 */</span><br><span class="line">&#125;</span><br><span class="line">else if(boolean_expression_second)</span><br><span class="line">&#123;</span><br><span class="line">    /* 如果布尔表达式为真将执行的语句 */</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    /* 如果布尔表达式为假将执行的语句 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-switch"><a href="#2-2-switch" class="headerlink" title="2.2 switch"></a>2.2 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/switch" target="_blank" rel="noopener">switch</a></h2><p>&emsp;&emsp;switch 是一个选择语句，它根据与匹配表达式匹配的模式，从候选列表中选择单个开关部分进行执行。</p>
+<blockquote>
+<ul>
+<li>switch 语句包含一个或多个开关部分。 每个开关部分包含一个或多个 case 标签，后接一个或多个语句。</li>
+<li>switch 语句中可以包含任意数量的开关部分，每个开关部分可以具有一个或多个 case 标签,但是，任何两个 case 标签不可包含相同的表达式。</li>
+<li><strong>每个 case 语句定义一个模式，如果它与匹配表达式相匹配，则会导致执行其包含的开关部分。 所有版本的 C# 都支持常量模式。 其余模式从 C# 7 开始支持。</strong></li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">switch(expression)&#123;</span><br><span class="line">    case constant-expression  :</span><br><span class="line">       statement(s);</span><br><span class="line">       break; </span><br><span class="line">    case constant-expression  :</span><br><span class="line">       statement(s);</span><br><span class="line">       break; </span><br><span class="line">  </span><br><span class="line">    /* 您可以有任意数量的 case 语句 */</span><br><span class="line">    default : /* 可选的 */</span><br><span class="line">       statement(s);</span><br><span class="line">       break; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3-值类型"><a href="#3-值类型" class="headerlink" title="3.值类型"></a>3.值类型</h1><p>&emsp;&emsp;值类型分为<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/struct" target="_blank" rel="noopener">结构</a>和<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/enum" target="_blank" rel="noopener">枚举</a>。</p>
+<blockquote>
+<ul>
+<li><strong>结构类型又分为：</strong></li>
+</ul>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>数值类型</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>整型类型</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>sbyte&emsp;&emsp;-128~127&emsp;&emsp;8 位带符号整数</li>
+<li>byte&emsp;&emsp;0~255&emsp;&emsp;无符号的 8 位整数</li>
+<li>char&emsp;&emsp;U+0000 到 U+ffff&emsp;&emsp;Unicode 16 位字符</li>
+<li>short&emsp;&emsp;-32,768 到 32,767&emsp;&emsp;有符号 16 位整数</li>
+<li>ushort&emsp;&emsp;0 到 65,535&emsp;&emsp;无符号 16 位整数</li>
+<li>int&emsp;&emsp;-2,147,483,648 到 2,147,483,647&emsp;&emsp;带符号的 32 位整数</li>
+<li>uint&emsp;&emsp;0 到 4,294,967,295&emsp;&emsp;无符号的 32 位整数</li>
+<li>long&emsp;&emsp;-9,223,372,036,854,775,808 到 9,223,372,036,854,775,807&emsp;&emsp;64 位带符号整数</li>
+<li>ulong&emsp;&emsp;0 到 18,446,744,073,709,551,615&emsp;&emsp;无符号 64 位整数</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>浮点类型</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>float&emsp;&emsp;±1.5e−45 到 ±3.4e38&emsp;&emsp;7 位精度</li>
+<li>double&emsp;&emsp;±5.0e−324 到 ±1.7e308&emsp;&emsp;15-16 位</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>小数</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>decimal&emsp;&emsp;(-7.9 x 1028 - 7.9 x 1028) / (100 - 1028)&emsp;&emsp;28-29 个有效位</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>bool</li>
+<li>用户自定义结构</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>struct 类型是一种值类型，通常用来封装小型相关变量组，例如，矩形的坐标或库存商品的特征。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public struct Book  </span><br><span class="line">&#123;  </span><br><span class="line">    public decimal price;  </span><br><span class="line">    public string title;  </span><br><span class="line">    public string author;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&emsp;&emsp;<strong>enum 关键字用于声明枚举，一种包含一组被称为枚举数列表的已命名常数的不同类型。</strong></p>
+<blockquote>
+<ul>
+<li>默认情况下，第一个枚举数具有值 0，并且每个连续枚举数的值将增加 1。</li>
+<li>每个枚举类型都有一个基础类型，该基础类型可以是除 char 外的任何整型类型；有 byte、sbyte、short、ushort、int、uint, long 或 ulong。</li>
+</ul>
+</blockquote>
+<h1 id="4-引用类型"><a href="#4-引用类型" class="headerlink" title="4.引用类型"></a>4.引用类型</h1><p>&emsp;&emsp;C# 中有两种类型：引用类型和值类型。 引用类型的变量存储对其数据（对象）的引用，而值类型的变量直接包含其数据。 </p>
+<blockquote>
+<ul>
+<li>对于引用类型，两种变量可引用同一对象；因此，对一个变量执行的操作会影响另一个变量所引用的对象。 </li>
+<li>对于值类型，每个变量都具有其自己的数据副本，对一个变量执行的操作不会影响另一个变量（in、ref 和 out 参数变量除外）。</li>
+</ul>
+</blockquote>
+<p>可通过下列关键字声明引用类型：</p>
+<blockquote>
+<ul>
+<li>class</li>
+<li>interface</li>
+<li>delegate</li>
+</ul>
+</blockquote>
+<p>c#内置引用类型：</p>
+<blockquote>
+<ul>
+<li>dynamic</li>
+<li>object</li>
+<li>string</li>
+</ul>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>  -在通过 dynamic 类型实现的操作中，该类型的作用是绕过编译时类型检查。改为在运行时解析这些操作。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        dynamic dyn = 1;</span><br><span class="line">        object obj = 1;</span><br><span class="line">        //编译器不会报告任何错误。 在编译时不会检查包含 dyn 的表达式，原因是 dyn 的类型为 dynamic</span><br><span class="line">        dyn = dyn + 3;  </span><br><span class="line">        //编译器报错</span><br><span class="line">        obj = obj + 3;  </span><br><span class="line">        // Rest the mouse pointer over dyn and obj to see their</span><br><span class="line">        // types at compile time.</span><br><span class="line">        System.Console.WriteLine(dyn.GetType());</span><br><span class="line">        System.Console.WriteLine(obj.GetType());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<h1 id="5-集合"><a href="#5-集合" class="headerlink" title="5.集合"></a>5.集合</h1><p>集合</p>
+
       
     </div>
     
@@ -402,6 +598,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c-sharp/" rel="tag"><i class="fa fa-tag"></i> c#</a>
+          
+            <a href="/tags/basic/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
+          
+        </div>
       
 
       <div>
@@ -486,8 +690,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -548,6 +761,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-循环"><span class="nav-text">1.循环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-do"><span class="nav-text">1.1 do</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-while"><span class="nav-text">1.2 while</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-foreach，in"><span class="nav-text">1.3 foreach，in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-for"><span class="nav-text">1.4 for</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-分支"><span class="nav-text">2.分支</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-if-else"><span class="nav-text">2.1 if-else</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-switch"><span class="nav-text">2.2 switch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-值类型"><span class="nav-text">3.值类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-引用类型"><span class="nav-text">4.引用类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-集合"><span class="nav-text">5.集合</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -575,7 +804,7 @@
     
       <span class="post-meta-item-text">总字数&#58;</span>
     
-    <span title="总字数">7.6k 字</span>
+    <span title="总字数">9.3k 字</span>
   
 </div>
 
