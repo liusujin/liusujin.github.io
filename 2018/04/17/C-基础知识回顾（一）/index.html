@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="山主">
 <meta property="og:description" content="1.循环&amp;emsp;&amp;emsp;循环由迭代语句创建。 根据循环终止条件，迭代语句可导致多次执行嵌入式语句。 除非遇到跳转语句，否则这些语句按顺序执行。 1.1 do  do…while 循环是在循环的尾部检查它的条件。 do…while 循环与 while 循环类似，但是 do…while 循环会确保至少执行一次循环。   12345do&amp;#123;   statement(s);&amp;#125;wh">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T16:31:46.753Z">
+<meta property="og:updated_time" content="2018-05-03T16:35:18.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 基础知识回顾（一）">
 <meta name="twitter:description" content="1.循环&amp;emsp;&amp;emsp;循环由迭代语句创建。 根据循环终止条件，迭代语句可导致多次执行嵌入式语句。 除非遇到跳转语句，否则这些语句按顺序执行。 1.1 do  do…while 循环是在循环的尾部检查它的条件。 do…while 循环与 while 循环类似，但是 do…while 循环会确保至少执行一次循环。   12345do&amp;#123;   statement(s);&amp;#125;wh">
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,589 字
+                  1,861 字
                 </span>
               
 
@@ -404,7 +404,7 @@
 </ul>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">   statement(s);</span><br><span class="line"></span><br><span class="line">&#125;while( condition );</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">op=&gt;operation: statement(s)</span><br><span class="line">cond=&gt;condition: condition</span><br><span class="line">e=&gt;end</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;op</span><br><span class="line">cond(no)-&gt;e</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">st=&gt;start: Start</span><br><span class="line">op=&gt;operation: statement(s)</span><br><span class="line">cond=&gt;condition: condition</span><br><span class="line">e=&gt;end</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;op</span><br><span class="line">cond(no)-&gt;e</span><br></pre></td></tr></table></figure>
 <h2 id="1-2-while"><a href="#1-2-while" class="headerlink" title="1.2 while"></a>1.2 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/while" target="_blank" rel="noopener">while</a></h2><p>&emsp;&emsp;因为 while 表达式的测试在每次执行循环之前开始，所以 while 循环执行零次或多次。 这不同于 do 循环，该循环执行一次或多次。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while(condition)</span><br><span class="line">&#123;</span><br><span class="line">   statement(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="1-3-foreach，in"><a href="#1-3-foreach，in" class="headerlink" title="1.3 foreach，in"></a>1.3 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/foreach-in" target="_blank" rel="noopener">foreach，in</a></h2><p>&emsp;&emsp;foreach 语句针对实现 System.Collections.IEnumerable 或 System.Collections.Generic.IEnumerable<t> 接口的数组或集合中的每个元素重复一组嵌入语句。 foreach 语句用于循环访问集合以获取所需信息，但不用于添加或删除源集合中的项，以避免不可预知的副作用。 如果需要添加或删除源集合中的项，请使用 for 循环。</t></p>
@@ -565,7 +565,67 @@
 <p>  -在通过 dynamic 类型实现的操作中，该类型的作用是绕过编译时类型检查。改为在运行时解析这些操作。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        dynamic dyn = 1;</span><br><span class="line">        object obj = 1;</span><br><span class="line">        //编译器不会报告任何错误。 在编译时不会检查包含 dyn 的表达式，原因是 dyn 的类型为 dynamic</span><br><span class="line">        dyn = dyn + 3;  </span><br><span class="line">        //编译器报错</span><br><span class="line">        obj = obj + 3;  </span><br><span class="line">        // Rest the mouse pointer over dyn and obj to see their</span><br><span class="line">        // types at compile time.</span><br><span class="line">        System.Console.WriteLine(dyn.GetType());</span><br><span class="line">        System.Console.WriteLine(obj.GetType());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 </blockquote>
-<h1 id="5-集合"><a href="#5-集合" class="headerlink" title="5.集合"></a>5.集合</h1><p>集合</p>
+<h1 id="5-集合"><a href="#5-集合" class="headerlink" title="5.集合"></a>5.<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/collections" target="_blank" rel="noopener">集合</a></h1><p>&emsp;&emsp;通常我们使用泛型集合以获得类型安全的直接优点而无需从基集合类型派生和实现特定类型的成员，同时也避免了对集合元素进行装箱操作。</p>
+<p>常见泛型集合类型：</p>
+<p>&emsp;&emsp;常见集合类型：</p>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2" target="_blank" rel="noopener">Dictionary</a></td>
+<td>表示基于键进行组织的键/值对的集合。</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1" target="_blank" rel="noopener">List</a></td>
+<td>表示可按索引访问的对象的列表。 提供用于对列表进行搜索、排序和修改的方法。</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.queue-1" target="_blank" rel="noopener">Queue</a></td>
+<td>表示对象的先进先出 (FIFO) 集合。</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.sortedlist-2" target="_blank" rel="noopener">SortedList</a></td>
+<td>表示基于相关的 <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icomparer-1" target="_blank" rel="noopener">IComparer</a> 实现按键进行排序的键/值对的集合。</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.stack-1" target="_blank" rel="noopener">Stack</a></td>
+<td>表示对象的后进先出 (LIFO) 集合。</td>
+</tr>
+</tbody>
+</table>
+<p>常见非泛型集合类型：</p>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.arraylist" target="_blank" rel="noopener">ArrayList</a></td>
+<td>表示对象的数组，这些对象的大小会根据需要动态增加。</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.hashtable" target="_blank" rel="noopener">Hashtable</a></td>
+<td>表示根据键的哈希代码进行组织的键/值对的集合。</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.queue" target="_blank" rel="noopener">Queue</a></td>
+<td>表示对象的先进先出 (FIFO) 集合。</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.collections.stack" target="_blank" rel="noopener">Stack</a></td>
+<td>表示对象的后进先出 (LIFO) 集合。</td>
+</tr>
+</tbody>
+</table>
+<p>扩展阅读：<a href="https://docs.microsoft.com/zh-cn/dotnet/standard/collections/selecting-a-collection-class" target="_blank" rel="noopener">集合使用的选择</a></p>
 
       
     </div>
@@ -804,7 +864,7 @@
     
       <span class="post-meta-item-text">总字数&#58;</span>
     
-    <span title="总字数">9.3k 字</span>
+    <span title="总字数">9.5k 字</span>
   
 </div>
 
