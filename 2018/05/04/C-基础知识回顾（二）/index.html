@@ -82,18 +82,18 @@
 
 
 
-<meta name="description" content="1.变量&amp;emsp;&amp;emsp;变量是用以存储特定类型的数据，可以根据需要随时改变变量中所存储的数据值。 变量三要素：   类型 名称 值   &amp;emsp;&amp;emsp;变量按作用域来划分的话可以分为全局变量和局部变量。全局变量在整个程序中引用；而局部变量只可以在程序中的有限部分被引用。 2.作用域&amp;emsp;&amp;emsp;作用域是指可访问程序中的字段、属性、方法等的区域。   类的字段所处的作用域等">
+<meta name="description" content="1.抽象1.1 抽象类&amp;emsp;&amp;emsp;抽象类设计之初主要是用来继承。其使用abstract关键字修饰，并且不能被实例化。继承自抽象类的类如果不为抽象类，则必须实现抽象类中的抽象方法、抽象属性。 1.2 抽象方法&amp;emsp;&amp;emsp;抽象方法没有主体。其形式如下： 1&amp;lt;访问修饰符&amp;gt; &amp;lt;返回类型&amp;gt; &amp;lt;方法名称&amp;gt;(参数列表); 且如果类中含有抽象方法，则该类">
 <meta name="keywords" content="c#,基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C# 变量及作用域">
-<meta property="og:url" content="http://yoursite.com/2018/04/16/C-变量及作用域/index.html">
+<meta property="og:title" content="C-基础知识回顾（二）">
+<meta property="og:url" content="http://yoursite.com/2018/05/04/C-基础知识回顾（二）/index.html">
 <meta property="og:site_name" content="山主">
-<meta property="og:description" content="1.变量&amp;emsp;&amp;emsp;变量是用以存储特定类型的数据，可以根据需要随时改变变量中所存储的数据值。 变量三要素：   类型 名称 值   &amp;emsp;&amp;emsp;变量按作用域来划分的话可以分为全局变量和局部变量。全局变量在整个程序中引用；而局部变量只可以在程序中的有限部分被引用。 2.作用域&amp;emsp;&amp;emsp;作用域是指可访问程序中的字段、属性、方法等的区域。   类的字段所处的作用域等">
+<meta property="og:description" content="1.抽象1.1 抽象类&amp;emsp;&amp;emsp;抽象类设计之初主要是用来继承。其使用abstract关键字修饰，并且不能被实例化。继承自抽象类的类如果不为抽象类，则必须实现抽象类中的抽象方法、抽象属性。 1.2 抽象方法&amp;emsp;&amp;emsp;抽象方法没有主体。其形式如下： 1&amp;lt;访问修饰符&amp;gt; &amp;lt;返回类型&amp;gt; &amp;lt;方法名称&amp;gt;(参数列表); 且如果类中含有抽象方法，则该类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-16T16:23:31.395Z">
+<meta property="og:updated_time" content="2018-05-04T14:54:21.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C# 变量及作用域">
-<meta name="twitter:description" content="1.变量&amp;emsp;&amp;emsp;变量是用以存储特定类型的数据，可以根据需要随时改变变量中所存储的数据值。 变量三要素：   类型 名称 值   &amp;emsp;&amp;emsp;变量按作用域来划分的话可以分为全局变量和局部变量。全局变量在整个程序中引用；而局部变量只可以在程序中的有限部分被引用。 2.作用域&amp;emsp;&amp;emsp;作用域是指可访问程序中的字段、属性、方法等的区域。   类的字段所处的作用域等">
+<meta name="twitter:title" content="C-基础知识回顾（二）">
+<meta name="twitter:description" content="1.抽象1.1 抽象类&amp;emsp;&amp;emsp;抽象类设计之初主要是用来继承。其使用abstract关键字修饰，并且不能被实例化。继承自抽象类的类如果不为抽象类，则必须实现抽象类中的抽象方法、抽象属性。 1.2 抽象方法&amp;emsp;&amp;emsp;抽象方法没有主体。其形式如下： 1&amp;lt;访问修饰符&amp;gt; &amp;lt;返回类型&amp;gt; &amp;lt;方法名称&amp;gt;(参数列表); 且如果类中含有抽象方法，则该类">
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/16/C-变量及作用域/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/04/C-基础知识回顾（二）/"/>
 
 
 
@@ -139,7 +139,7 @@
         }
     })();
 </script>
-  <title>C# 变量及作用域 | 山主</title>
+  <title>C-基础知识回顾（二） | 山主</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/C-变量及作用域/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/C-基础知识回顾（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="山主">
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C# 变量及作用域</h1>
+          <h1 class="post-title" itemprop="name headline">C-基础知识回顾（二）</h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T23:57:20+08:00">
-                2018-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T22:00:15+08:00">
+                2018-05-04
               </time>
             
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  304 字
+                  363 字
                 </span>
               
 
@@ -396,24 +396,20 @@
       
 
       
-        <h1 id="1-变量"><a href="#1-变量" class="headerlink" title="1.变量"></a>1.变量</h1><p>&emsp;&emsp;<strong>变量</strong>是用以存储特定类型的数据，可以根据需要随时改变变量中所存储的数据值。</p>
-<p><strong>变量三要素：</strong></p>
+        <h1 id="1-抽象"><a href="#1-抽象" class="headerlink" title="1.抽象"></a>1.抽象</h1><h2 id="1-1-抽象类"><a href="#1-1-抽象类" class="headerlink" title="1.1 抽象类"></a>1.1 抽象类</h2><p>&emsp;&emsp;抽象类设计之初主要是用来继承。其使用<code>abstract</code>关键字修饰，并且不能被实例化。继承自抽象类的类如果不为抽象类，则必须实现抽象类中的抽象方法、抽象属性。</p>
+<h2 id="1-2-抽象方法"><a href="#1-2-抽象方法" class="headerlink" title="1.2 抽象方法"></a>1.2 抽象方法</h2><p>&emsp;&emsp;抽象方法没有主体。其形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;访问修饰符&gt; &lt;返回类型&gt; &lt;方法名称&gt;(参数列表);</span><br></pre></td></tr></table></figure>
+<p>且如果类中含有抽象方法，则该类必须为抽象类。</p>
+<h1 id="2-委托"><a href="#2-委托" class="headerlink" title="2.委托"></a>2.委托</h1><p>&emsp;&emsp;委托简单来说就是观察者模式的实现，将方法签名和具体实现解耦，使得程序更易维护和扩展。</p>
+<p>&emsp;&emsp;MS已经为我们定义了几种需要委托时可重用的类型。这些类型为<a href="https://docs.microsoft.com/dotnet/api/system.action" target="_blank" rel="noopener">Action</a> 类型和一些变体，<a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.func-1?view=netframework-4.7.2" target="_blank" rel="noopener">Func</a> 类型和一些变体，<a href="https://docs.microsoft.com/dotnet/api/system.predicate-1" target="_blank" rel="noopener">Predicate</a>。</p>
+<h1 id="3-接口"><a href="#3-接口" class="headerlink" title="3.接口"></a>3.接口</h1><p>&emsp;&emsp;接口是一组相关功能的定义。通过接口我们可以确保类具有指定的功能，同时也抽离了具体行为和类本身的耦合。</p>
 <blockquote>
 <ul>
-<li>类型</li>
-<li>名称</li>
-<li>值</li>
+<li>接口可以包含方法、属性、事件、索引器或这四种成员类型的任意组合。</li>
 </ul>
 </blockquote>
-<p>&emsp;&emsp;<strong>变量</strong>按作用域来划分的话可以分为<code>全局变量</code>和<code>局部变量</code>。全局变量在整个程序中引用；而局部变量只可以在程序中的有限部分被引用。</p>
-<h1 id="2-作用域"><a href="#2-作用域" class="headerlink" title="2.作用域"></a>2.作用域</h1><p>&emsp;&emsp;<strong>作用域是指可访问程序中的字段、属性、方法等的区域。</strong></p>
-<blockquote>
-<ul>
-<li>类的字段所处的作用域等同于该字段所属类所在的作用域。</li>
-<li>局部变量的作用域仅限于声明它的方法的或循环体内部,以大括号{}为界。</li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class Person</span><br><span class="line">    &#123;</span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 字段-名字</span><br><span class="line">        /// 作用域为当前类</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        private string name;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 属性-名字</span><br><span class="line">        /// 作用域为当前类及包含当前类的类中</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        public string Name &#123; get;&#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 设置名字</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;inputName&quot;&gt;参数-名字（作用域为方法内部）&lt;/param&gt;</span><br><span class="line">        public void SetName(string inputName)</span><br><span class="line">        &#123;</span><br><span class="line">            //临时变量-名字</span><br><span class="line">            //作用域为方法内部</span><br><span class="line">            string temp = inputName + &quot;(temp Name)&quot;;</span><br><span class="line">            this.name = inputName;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;继承主要是通过创建重用、扩展和修改在基类中定义的行为的新类，它是基类的一种特殊化，被称为派生类。派生类会隐式获得基类的所有成员（除了其构造函数和终结器）。</p>
+
       
     </div>
     
@@ -433,7 +429,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2018/04/16/C-变量及作用域/" title="C# 变量及作用域">http://yoursite.com/2018/04/16/C-变量及作用域/</a>
+    <a href="http://yoursite.com/2018/05/04/C-基础知识回顾（二）/" title="C-基础知识回顾（二）">http://yoursite.com/2018/05/04/C-基础知识回顾（二）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -473,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/15/C-类-Class/" rel="next" title="C# 类(Class)">
-                <i class="fa fa-chevron-left"></i> C# 类(Class)
+              <a href="/2018/04/27/Unity生命周期管理系统ApplicationLifecycleSystem/" rel="next" title="Unity生命周期管理系统ApplicationLifecycleSystem">
+                <i class="fa fa-chevron-left"></i> Unity生命周期管理系统ApplicationLifecycleSystem
               </a>
             
           </div>
@@ -482,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/17/C-基础知识回顾（一）/" rel="prev" title="C# 基础知识回顾（一）">
-                C# 基础知识回顾（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -617,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-变量"><span class="nav-text">1.变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-作用域"><span class="nav-text">2.作用域</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-抽象"><span class="nav-text">1.抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-抽象类"><span class="nav-text">1.1 抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-抽象方法"><span class="nav-text">1.2 抽象方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-委托"><span class="nav-text">2.委托</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-接口"><span class="nav-text">3.接口</span></a></li></ol></div>
             
 
           </div>
